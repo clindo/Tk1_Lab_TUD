@@ -18,6 +18,8 @@ The use of explicit data typing produces cost in space and time. It need to inte
 CORBA CDR enables the senders and the receivers to work together even if they are written in different programming languages. 
 Referred: http://read.pudn.com/downloads151/ebook/655783/Distributed/Chapter4Answers.pdf
 
+Task 1.3
+a) In RRA three messages are being exchanged Request, Reply and Acknowledgment whereas in Request-Reply special acknowledgement messages are not required as the reply from the server is treated as an acknowledgement of the client’s Request Message. So even though there is an additional message, there is no need to block the client as the acknowledgment maybe given after the reply has been given to the client. So the client will know if the request has been processed using the requestId that is passed along in the acknowledgement.  The disadvantage with RRA is that in order to create this acknowledgment it uses additional processing and network resources when compared to RR.
 
 
 
