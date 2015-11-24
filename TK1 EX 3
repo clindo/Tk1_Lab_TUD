@@ -1,0 +1,34 @@
+Task 1.1: Threading 
+Explain in a few sentences the introduced concepts of a Monitor. 
+The Monitor is nothing but it is a synchronization construct in a concurrent programming. The major function is, it allows the thread to do Mutual Exclusion and it has the ability to wait until some conditions become satisfied. It also informs other threads whether there conditions are met. A Monitor has basically four components Private Data, Monitor Procedure, Initialization, Entry Queue. The Initialization component consist of code that need to be executed once the Monitor has been created. The private data components consists some data that can’t visible and access outside the Monitor. In the Monitor Procedure component it has some procedure to execute, it can be called from outside of the Monitor. The Entry Queue contains threads that called by Monitor Procedures.
+Task 1.2: Transparency in Java RMI (4 P.) 
+Describe for each type of transparency, if it is provided by RMI and give a short explanation why?
+ Several types of transparencies are there in distributed systems some of them are
+1.	Access Transparency
+In this the client should not have the knowledge of the distribution of the file, it could be present in a different set of servers. It can be also said to be explicit communication may be hidden. In users view accessing a remote service is identical to accessing a local service (Eg: Printer). 
+
+2.	Location Transparency
+The client should be unaware of the topology of the distributed system and also they don’t have the knowledge about the location of an object in the system. This property is important for the movement, support of the resources and available services. Some time it is referred as Network transparency.
+
+3.	Concurrency Transparency
+The Application and Users should have the ability to access the shared data or objects without any interference between each other. This is very complex so instead of simulated concurrency here exist true concurrency. The implementation and concurrency control is very complex.
+
+4.	Replication Transparency
+In this it will replicate the data in two or more location for the reliability. The client is unaware about the existence of replicated data.
+
+5.	Failure Transparency
+Allows the Users and Application to complete the task without affecting the failure of hardware and software. If a software or hardware failure is occur it is hidden from the client so it is difficult to provide in a distributed system. Fault tolerance will be provided by the mechanism related to access transparency.
+
+
+6.	Migration Transparency
+The client should not have the knowledge of movement of the process or information in a system without affecting operations.
+
+7.	Performance Transparency
+It will provide the better performance and reliability. It will be hidden from the user.
+
+8.	Scaling Transparency
+The system will grow without affecting application algorithms also it should be able to scale down to small environments when required.
+
+
+
+
