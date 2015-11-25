@@ -29,6 +29,38 @@ It will provide the better performance and reliability. It will be hidden from t
 8.	Scaling Transparency
 The system will grow without affecting application algorithms also it should be able to scale down to small environments when required.
 
+Task 1.3 :
+
+1.	Single Thread
+
+Time for one request = Compute the arg for client + Marshal args + Process time of OS send + network time transfer + OS receive + Unmarshal args + server process + Marshal server result + OS send + network transfer time + OS receive + Unmarshal args 
+
+So Time for one request = 4+1+0.3+4+0.3+1+9+1+0.3+4+0.3+1 = 26.2 ms
+
+Time for 2 requests = 26.2 * 2  = 52.4 ms 
+
+2.	Multi-Thread
+
+Client calc args + marshal args + Send time OS for 1st Call = (4+1+0.3) = 5.3 ms
+
+For 2nd call = 5.3 
+Time for both call = 10.6
+
+So after 10.6 it waits for the server response, 
+At server 1st call comes after 5.3 ,
+5.3 + network time + OS receive + unmarshal  = 5.3 + 4 + 0.3 + 1 = 10.6 ms
+At 10.6 + 9 + 1 + 0.3 = 20.9 ms , So at 20.9 ms first is send back
+
+The 2nd req it is taken at 20.9 ms,
+Taking 9+1+0.3 = 10.3ms, sends it back at 20.6 + 10.3 = 30.9 ms from start. 
+Client Receives = 30.9 + 4 + 0.3 +1 = 36.2 ms 
+
+So Time for 2 Calls = 36.2 ms. 
+
+
+
+
+
 
 
 
